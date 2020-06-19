@@ -8,12 +8,12 @@ import Head from 'next/head'
 export async function getServerSideProps({ params }) {
 
     const res = await fetch(
-        // `https://my-json-server.typicode.com/mareestephan/jsonProducts/pages_to_create `
-        `http://www.json-generator.com/api/json/get/ckeElWByRe?indent=2`
+        // `http://www.json-generator.com/api/json/get/ckeElWByRe?indent=2`
+        `http://35.190.35.153/api/pages-to-create/all-sale`
     )
 
     const posts = await res.json();
-    const displayProducts = posts.pages_to_create.filter(obj => obj.slug == "/clp/" + params.category)
+    const displayProducts = posts.pages_to_create.filter(obj => obj.slug == "ssr/" + params.category)
 
     return (
         {
